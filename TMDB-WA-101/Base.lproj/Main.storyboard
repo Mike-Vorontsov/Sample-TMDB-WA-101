@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zvC-vi-JQc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zvC-vi-JQc">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Bad-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TMDB_WA_101" customModuleProvider="target" sceneMemberID="viewController">
@@ -36,7 +37,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qfg-ID-vy6" secondAttribute="trailing" id="iAd-Ls-F6f"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="t7o-Y6-9ye"/>
+                    <tabBarItem key="tabBarItem" title="Bad" image="face.dashed" catalog="system" id="t7o-Y6-9ye"/>
                     <connections>
                         <outlet property="footer" destination="KRr-2M-um9" id="ldV-ih-isR"/>
                         <outlet property="stackView" destination="qfg-ID-vy6" id="jBE-Z6-k6G"/>
@@ -46,10 +47,10 @@
             </objects>
             <point key="canvasLocation" x="1061.8320610687022" y="3.5211267605633805"/>
         </scene>
-        <!--Item-->
+        <!--All Movies-->
         <scene sceneID="CWh-ni-Gyk">
             <objects>
-                <tableViewController id="aeb-cy-iB4" customClass="MoviesTableViewController" customModule="TMDB_WA_101" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="All Movies" id="aeb-cy-iB4" customClass="MoviesTableViewController" customModule="TMDB_WA_101" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="0AU-7E-Uar">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,6 +72,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="t0v-VA-FsD" kind="show" identifier="showDetails" id="tBa-zA-ZcY"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -78,13 +82,57 @@
                             <outlet property="delegate" destination="aeb-cy-iB4" id="H38-CB-Lu2"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="YpN-1C-tnK"/>
+                    <navigationItem key="navigationItem" title="All Movies" id="Yt0-Pk-S5C">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" id="YIo-BI-K6n">
+                                <connections>
+                                    <action selector="demostrateSetView:" destination="aeb-cy-iB4" id="pza-uU-2d5"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Push" id="kTa-eO-KKD">
+                                <connections>
+                                    <action selector="demostratePush:" destination="aeb-cy-iB4" id="icW-7D-AHM"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="saM-ZU-tN2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2072.5190839694656" y="11.971830985915494"/>
+            <point key="canvasLocation" x="2879" y="4"/>
         </scene>
-        <!--Item-->
+        <!--Details-->
+        <scene sceneID="XX0-AI-0Sc">
+            <objects>
+                <viewController storyboardIdentifier="detailsViewController" title="Details" id="t0v-VA-FsD" customClass="DetailsViewController" customModule="TMDB_WA_101" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2FN-Wb-dIb">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HeC-XZ-mvz">
+                                <rect key="frame" x="175.66666666666666" y="415.66666666666669" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XRk-HZ-8s3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HeC-XZ-mvz" firstAttribute="centerX" secondItem="2FN-Wb-dIb" secondAttribute="centerX" id="MwS-Iv-XWm"/>
+                            <constraint firstItem="HeC-XZ-mvz" firstAttribute="centerY" secondItem="2FN-Wb-dIb" secondAttribute="centerY" id="cgA-OL-Qt7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Details" id="gnQ-3d-E5u"/>
+                    <connections>
+                        <outlet property="movieNameLabel" destination="HeC-XZ-mvz" id="kdm-4o-fKw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="srk-1Q-ot1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4065" y="4"/>
+        </scene>
+        <!--CoreData-->
         <scene sceneID="fX7-4q-p9z">
             <objects>
                 <tableViewController id="lCc-Hs-r2c" customClass="FetchedResultsViewController" customModule="TMDB_WA_101" customModuleProvider="target" sceneMemberID="viewController">
@@ -116,11 +164,11 @@
                             <outlet property="delegate" destination="lCc-Hs-r2c" id="gJ0-9h-hbR"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="e6s-w1-uVl"/>
+                    <tabBarItem key="tabBarItem" title="CoreData" image="circle.dashed" catalog="system" id="e6s-w1-uVl"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H9x-LI-YeY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2985.4961832061067" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="3634" y="936"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yfh-dd-bc4">
@@ -128,21 +176,45 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="zvC-vi-JQc" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kyh-eY-tgs">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="RaL-bR-qp5"/>
                         <segue destination="lCc-Hs-r2c" kind="relationship" relationship="viewControllers" id="thW-eG-dxe"/>
-                        <segue destination="aeb-cy-iB4" kind="relationship" relationship="viewControllers" id="RFL-lh-3GO"/>
+                        <segue destination="cx2-gh-0sn" kind="relationship" relationship="viewControllers" id="RFL-lh-3GO"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W40-w6-2mh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1741" y="988"/>
         </scene>
+        <!--Classic-->
+        <scene sceneID="oXU-FS-217">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cx2-gh-0sn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Classic" image="pencil.circle" catalog="system" id="YpN-1C-tnK"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="TlM-S5-pOF"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MMY-o9-Y7U">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aeb-cy-iB4" kind="relationship" relationship="rootViewController" id="b62-zJ-dmn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U56-lo-fSA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2058.7786259541986" y="3.5211267605633805"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="circle.dashed" catalog="system" width="128" height="123"/>
+        <image name="face.dashed" catalog="system" width="128" height="123"/>
+        <image name="pencil.circle" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
