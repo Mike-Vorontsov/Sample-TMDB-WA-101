@@ -26,6 +26,8 @@
 		48B039422A27D5C500CCCBF8 /* FetchedResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B039412A27D5C500CCCBF8 /* FetchedResultsViewController.swift */; };
 		48B0394A2A31034500CCCBF8 /* TMDB_WA_101Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B039492A31034500CCCBF8 /* TMDB_WA_101Tests.swift */; };
 		48B039512A31052800CCCBF8 /* DataFlowControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B039502A31052800CCCBF8 /* DataFlowControllerTests.swift */; };
+		8626571F2A378BEA0026EFE8 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8626571E2A378BEA0026EFE8 /* DetailsViewController.swift */; };
+		862657212A3794AB0026EFE8 /* MoviesNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862657202A3794AB0026EFE8 /* MoviesNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		48B039472A31034500CCCBF8 /* TMDB-WA-101Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TMDB-WA-101Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48B039492A31034500CCCBF8 /* TMDB_WA_101Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDB_WA_101Tests.swift; sourceTree = "<group>"; };
 		48B039502A31052800CCCBF8 /* DataFlowControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFlowControllerTests.swift; sourceTree = "<group>"; };
+		8626571E2A378BEA0026EFE8 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		862657202A3794AB0026EFE8 /* MoviesNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,8 @@
 			children = (
 				48B039412A27D5C500CCCBF8 /* FetchedResultsViewController.swift */,
 				482A61852A1E8CF100DBA4AF /* MoviesTableViewController.swift */,
+				8626571E2A378BEA0026EFE8 /* DetailsViewController.swift */,
+				862657202A3794AB0026EFE8 /* MoviesNavigationController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -278,6 +284,7 @@
 				48B0393E2A27D36800CCCBF8 /* FallbackDataController.swift in Sources */,
 				48B0393A2A27CAEE00CCCBF8 /* CoreDataDemo1.xcdatamodeld in Sources */,
 				48B039122A27BF7300CCCBF8 /* DataFlowController.swift in Sources */,
+				862657212A3794AB0026EFE8 /* MoviesNavigationController.swift in Sources */,
 				482A616D2A1E7D3600DBA4AF /* AppDelegate.swift in Sources */,
 				48B039142A27C1ED00CCCBF8 /* FileCachingController.swift in Sources */,
 				482A61882A1E8E2200DBA4AF /* NetworkController.swift in Sources */,
@@ -288,6 +295,7 @@
 				482A61862A1E8CF100DBA4AF /* MoviesTableViewController.swift in Sources */,
 				48B039402A27D43600CCCBF8 /* AlwaysFailFetchingController.swift in Sources */,
 				482A616F2A1E7D3600DBA4AF /* SceneDelegate.swift in Sources */,
+				8626571F2A378BEA0026EFE8 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

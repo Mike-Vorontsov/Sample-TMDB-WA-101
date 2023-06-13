@@ -12,12 +12,80 @@ class MoviesTableViewController: UITableViewController {
     var movies: [Movie] = []
 
     let dataController = FallbackDataController()
-//    let networkController = NetworkController()
-//    let cachingController = UserDefaultsController()
+    lazy var moviesNavigationController: MoviesNavigationController = {
+        MoviesNavigationController(
+            navigationController: self.navigationController!,
+            storyboard: self.storyboard!
+        )
+    }()
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard
+            let detailsViewController = segue.destination as? DetailsViewController,
+            let sender = sender as? UITableViewCell,
+            let index = tableView.indexPath(for: sender)?.item,
+            movies.count > index
+        else {
+            return
+        }
+        
+        let selectedMovie = movies[index]
+        
+        detailsViewController.parentController = self
+        detailsViewController.movie = selectedMovie
+    }
+    
+//    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+//
+//        guard
+//            let sender = sender as? UITableViewCell,
+//            let index = tableView.indexPath(for: sender)?.item,
+//            movies.count > index
+//        else {
+//            return false
+//        }
+//
+//        let selectedMovie = movies[index]
+//
+//        return selectedMovie.title.count > 10 ? true : false
+//
+//    }
+    
+    func makeDetailsViewController(for movie: Movie) -> DetailsViewController? {
+        let storyboard = self.storyboard
+        
+        let detailsViewController = storyboard?.instantiateViewController(withIdentifier: "detailsViewController") as? DetailsViewController
+        detailsViewController?.movie = movie
+        
+        return detailsViewController
+    }
+    
+    @IBAction func demostrateSetView(_ sender: Any) {
+        
+        let viewControllers = movies.compactMap {
+            self.makeDetailsViewController(for: $0)
+        }
+        
+        self.navigationController?.setViewControllers([self] + viewControllers, animated: true)
+        
+    }
+    
+    @IBAction func demostratePush(_ sender: Any) {
+        guard
+            let movie = movies.randomElement()
+        else { return }
+  
+        moviesNavigationController.showDetails(for: movie)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
+        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+//            let cell = self.tableView.visibleCells.last
+//            self.performSegue(withIdentifier: "showDetails", sender: cell)
+//        }
     
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -28,8 +96,6 @@ class MoviesTableViewController: UITableViewController {
 
     private func loadData() {
         Task.init {
-         
-            
             do {
                 self.movies += try await dataController.loadData(page: 1)
                 self.tableView.reloadData()
