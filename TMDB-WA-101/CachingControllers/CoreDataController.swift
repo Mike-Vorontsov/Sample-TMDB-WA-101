@@ -65,12 +65,6 @@ class CoreDataController: DataCaching {
             }
             try? context.save()
         }
-        
-//        let bgContext = self.persistentContainer.newBackgroundContext()
-//
-//        bgContext.perform {
-//
-//        }
     }
     
     // MARK: - Core Data Saving support

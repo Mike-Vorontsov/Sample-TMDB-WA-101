@@ -1,10 +1,3 @@
-//
-//  MoviesNavigationController.swift
-//  TMDB-WA-101
-//
-//  Created by Mykhailo Vorontsov on 12/06/2023.
-//
-
 import UIKit
 
 class MoviesNavigationController {
