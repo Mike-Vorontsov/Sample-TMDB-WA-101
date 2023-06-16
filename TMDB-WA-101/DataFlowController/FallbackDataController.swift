@@ -9,6 +9,7 @@ import Foundation
 
 class FallbackDataController: DataFetching {
     let networkController: DataFetching = NetworkController()
+    
 //    let networkController: DataFetching = AlwaysFailFetchingController()
     let cacheController: DataCaching = CoreDataController.shared
     
