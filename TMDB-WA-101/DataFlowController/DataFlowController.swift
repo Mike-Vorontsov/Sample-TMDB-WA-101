@@ -6,9 +6,17 @@
 //
 
 import Foundation
+import UIKit.UIImage
+
+typealias UIImage = UIKit.UIImage
 
 protocol DataFetching {
     func loadData(page: Int) async throws -> [Movie]
+    func loadImage(from path: String) async throws -> UIImage
+}
+
+enum CommonErrors: Error {
+    case unexpected
 }
 
 class DataFlowController: DataFetching {
@@ -21,6 +29,10 @@ class DataFlowController: DataFetching {
     ) {
         self.cacheController = cacheController
         self.networkController = netController
+    }
+    
+    func loadImage(from path: String) async throws -> UIImage {
+        try await networkController.loadImage(from: path)
     }
     
     func loadData(page: Int = 1) async throws -> [Movie] {

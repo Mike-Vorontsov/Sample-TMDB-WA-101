@@ -8,6 +8,10 @@
 import Foundation
 
 class NetworkController: DataFetching {
+    
+    enum NetErrors: Error {
+        case notImage
+    }
 
     let headers = [
         "accept": "application/json",
@@ -37,5 +41,17 @@ class NetworkController: DataFetching {
         let moviesResponse = try decoder.decode(MoviesResponse.self, from: sessionResponse.0)
         
         return moviesResponse.results
+    }
+    
+    func loadImage(from path: String) async throws -> UIImage {
+        let url = URL(string: "https://image.tmdb.org/t/p/w154/\(path)")!
+        
+        let sessionResponse = try await session.data(from: url)
+        
+        guard let image = UIImage(data: sessionResponse.0) else {
+            throw NetErrors.notImage
+        }
+        
+        return image
     }
 }

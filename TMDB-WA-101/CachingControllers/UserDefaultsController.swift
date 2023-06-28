@@ -12,6 +12,11 @@ protocol DataCaching: DataFetching {
 }
 
 class UserDefaultsController: DataCaching {
+    func loadImage(from path: String) async throws -> UIImage {
+        throw CommonErrors.unexpected
+        
+    }
+    
         
     let defaults = UserDefaults.standard
     let key = "movies"

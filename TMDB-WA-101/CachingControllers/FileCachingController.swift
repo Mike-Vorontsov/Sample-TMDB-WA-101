@@ -8,6 +8,10 @@
 import Foundation
 
 class FileCachingController: DataCaching {
+    func loadImage(from path: String) async throws -> UIImage {
+        throw CommonErrors.unexpected
+    }
+    
     
     let fileManager = FileManager.default
     let fileName = "cache.json"
