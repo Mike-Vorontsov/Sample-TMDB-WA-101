@@ -13,6 +13,10 @@ class FallbackDataController: DataFetching {
 //    let networkController: DataFetching = AlwaysFailFetchingController()
     let cacheController: DataCaching = CoreDataController.shared
     
+    func loadImage(from path: String) async throws -> UIImage {
+        try await  networkController.loadImage(from: path)
+    }
+    
     func loadData(page: Int = 1) async throws -> [Movie] {
         
         do {

@@ -28,6 +28,9 @@
 		48B039512A31052800CCCBF8 /* DataFlowControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B039502A31052800CCCBF8 /* DataFlowControllerTests.swift */; };
 		8626571F2A378BEA0026EFE8 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8626571E2A378BEA0026EFE8 /* DetailsViewController.swift */; };
 		862657212A3794AB0026EFE8 /* MoviesNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862657202A3794AB0026EFE8 /* MoviesNavigationController.swift */; };
+		86E355502A4CA23D0097594D /* MVVMController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E3554F2A4CA23D0097594D /* MVVMController.swift */; };
+		86E355532A4CA2EB0097594D /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E355522A4CA2EB0097594D /* MovieViewModel.swift */; };
+		86E355552A4CA43A0097594D /* MoviesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E355542A4CA43A0097594D /* MoviesListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,9 @@
 		48B039502A31052800CCCBF8 /* DataFlowControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFlowControllerTests.swift; sourceTree = "<group>"; };
 		8626571E2A378BEA0026EFE8 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		862657202A3794AB0026EFE8 /* MoviesNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesNavigationController.swift; sourceTree = "<group>"; };
+		86E3554F2A4CA23D0097594D /* MVVMController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMController.swift; sourceTree = "<group>"; };
+		86E355522A4CA2EB0097594D /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
+		86E355542A4CA43A0097594D /* MoviesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,7 @@
 		482A616B2A1E7D3600DBA4AF /* TMDB-WA-101 */ = {
 			isa = PBXGroup;
 			children = (
+				86E355512A4CA2C60097594D /* ViewModel */,
 				48B039382A27CAEE00CCCBF8 /* CoreDataDemo1.xcdatamodeld */,
 				48B039102A27BF5900CCCBF8 /* DataFlowController */,
 				48B0390D2A27B96600CCCBF8 /* CachingControllers */,
@@ -134,6 +141,7 @@
 		482A61812A1E8C8400DBA4AF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				86E3554F2A4CA23D0097594D /* MVVMController.swift */,
 				48B039412A27D5C500CCCBF8 /* FetchedResultsViewController.swift */,
 				482A61852A1E8CF100DBA4AF /* MoviesTableViewController.swift */,
 				8626571E2A378BEA0026EFE8 /* DetailsViewController.swift */,
@@ -177,6 +185,15 @@
 				48B039502A31052800CCCBF8 /* DataFlowControllerTests.swift */,
 			);
 			path = "TMDB-WA-101Tests";
+			sourceTree = "<group>";
+		};
+		86E355512A4CA2C60097594D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				86E355522A4CA2EB0097594D /* MovieViewModel.swift */,
+				86E355542A4CA43A0097594D /* MoviesListViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,9 +299,11 @@
 			files = (
 				482A61712A1E7D3600DBA4AF /* ViewController.swift in Sources */,
 				48B0393E2A27D36800CCCBF8 /* FallbackDataController.swift in Sources */,
+				86E355552A4CA43A0097594D /* MoviesListViewModel.swift in Sources */,
 				48B0393A2A27CAEE00CCCBF8 /* CoreDataDemo1.xcdatamodeld in Sources */,
 				48B039122A27BF7300CCCBF8 /* DataFlowController.swift in Sources */,
 				862657212A3794AB0026EFE8 /* MoviesNavigationController.swift in Sources */,
+				86E355532A4CA2EB0097594D /* MovieViewModel.swift in Sources */,
 				482A616D2A1E7D3600DBA4AF /* AppDelegate.swift in Sources */,
 				48B039142A27C1ED00CCCBF8 /* FileCachingController.swift in Sources */,
 				482A61882A1E8E2200DBA4AF /* NetworkController.swift in Sources */,
@@ -292,6 +311,7 @@
 				48B0390F2A27B98700CCCBF8 /* UserDefaultsController.swift in Sources */,
 				482A61842A1E8CC900DBA4AF /* Movie.swift in Sources */,
 				48B039422A27D5C500CCCBF8 /* FetchedResultsViewController.swift in Sources */,
+				86E355502A4CA23D0097594D /* MVVMController.swift in Sources */,
 				482A61862A1E8CF100DBA4AF /* MoviesTableViewController.swift in Sources */,
 				48B039402A27D43600CCCBF8 /* AlwaysFailFetchingController.swift in Sources */,
 				482A616F2A1E7D3600DBA4AF /* SceneDelegate.swift in Sources */,

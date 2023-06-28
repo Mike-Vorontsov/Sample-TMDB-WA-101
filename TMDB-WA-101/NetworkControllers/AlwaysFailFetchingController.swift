@@ -10,6 +10,10 @@ import Foundation
 
 
 class AlwaysFailFetchingController: DataFetching {
+    func loadImage(from path: String) async throws -> UIImage {
+        throw SomeError.always
+    }
+    
     
     enum SomeError: Error {
         case always

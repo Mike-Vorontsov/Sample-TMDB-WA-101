@@ -10,6 +10,10 @@ import CoreData
 // MARK: - Core Data stack
 
 class CoreDataController: DataCaching {
+    func loadImage(from path: String) async throws -> UIImage {
+        throw CommonErrors.unexpected
+    }
+    
     
     static let shared = CoreDataController()
     
